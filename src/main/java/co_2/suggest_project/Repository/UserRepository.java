@@ -1,9 +1,13 @@
 package co_2.suggest_project.Repository;
 
+import co_2.suggest_project.Entity.UserEntity;
 import co_2.suggest_project.Model.UserDTO;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<UserDTO, Integer> {
-    UserDTO findByUserId(int userId);
+import java.util.Optional;
+
+public interface UserRepository extends JpaRepository<UserEntity, Long> {
+    Optional<UserEntity> findById(Long Id);
+    Optional<UserDTO> findByEmail(String email);
 
 }
