@@ -1,24 +1,31 @@
 package co_2.suggest_project.Controller;
 
+import co_2.suggest_project.Entity.UserEntity;
 import co_2.suggest_project.Model.UserDTO;
+import co_2.suggest_project.Repository.UserRepository;
 import co_2.suggest_project.Service.UserService;
-import org.apache.catalina.User;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 public class SignUpController {
 
     private UserService userService;
+    private UserRepository userRepository;
+    private PasswordEncoder passwordEncoder;
 
-    public SignUpController(UserService userService) {
+    public SignUpController(UserService userService, UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userService = userService;
+        this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
 
     }
     @PostMapping("/signup")
@@ -55,19 +62,22 @@ public class SignUpController {
         return ResponseEntity.ok().body("Verification code has been sent to " + email);
     }
 
-//    @PostMapping("/sendVerificationCode")
-//    public ResponseEntity<?> sendVerificationCode(@RequestBody HashMap<String, String> map) throws Exception {
-//        String email = map.get("email");
-//
-//        if (userService.isEmailDuplicated((email))) {
-//            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("이미 사용중인 이메일입니다.");
-//        }
-//
-//        userService.createVerificationCode(email);
-//
-//        return ResponseEntity.status(HttpStatus.OK).body("인증 코드가 발송되었습니다.");
-//    }
+    @PostMapping("/signin")
+    public ResponseEntity<?> signin(@RequestBody Map<String, String> credentials) {
+        String email = credentials.get("email");
+        String password = credentials.get("password");
 
+        // 1. 이메일로 사용자 찾기
+        Optional<UserEntity> optionalUser = userRepository.findByEmail(email);
+        if (!optionalUser.isPresent()) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("존재하지 않는 이메일입니다.");
+        }
 
-
+        // 2. 비밀번호 일치 여부 확인
+        UserEntity user = optionalUser.get();
+        if (!passwordEncoder.matches(password, user.getPassword())) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("비밀번호가 틀렸습니다.");
+        }
+        return ResponseEntity.ok().body("로그인 완료");
+    }
 }

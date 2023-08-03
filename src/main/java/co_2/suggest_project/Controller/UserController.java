@@ -48,8 +48,8 @@ public class UserController {
     }
 
     @PostMapping("/change-password")
-    public ResponseEntity<?> changePassword(@RequestBody UserDTO.ChangePasswordRequest request) {
-        boolean result = userService.changePassword(request.getEmail(), request.getCurrentPassword(), request.getNewPassword(), request.getConfirmNewPassword());
+    public ResponseEntity<?> updatePassword(@RequestBody UserDTO.ChangePasswordRequest request) {
+        boolean result = userService.updatePassword(request.getEmail(), request.getCurrentPassword(), request.getNewPassword(), request.getConfirmNewPassword());
         return result ? new ResponseEntity<>(HttpStatus.OK) : new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 

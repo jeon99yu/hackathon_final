@@ -66,7 +66,7 @@ public class UserService {
         return correctCode != null && correctCode.equals(inputCode);
     }
 
-    public boolean changePassword(String email, String currentPassword, String newPassword, String confirmNewPassword) {
+    public boolean updatePassword(String email, String currentPassword, String newPassword, String confirmNewPassword) {
         UserEntity userEntity = userRepository.findByEmail(email).orElse(null);
 
         if (userEntity == null || !passwordEncoder.matches(currentPassword, userEntity.getPassword())) {
@@ -90,7 +90,7 @@ public class UserService {
     }
 
     @Transactional
-    public void changePassword(String email, String newPassword) {
+    public void resetPassword(String email, String newPassword) {
         UserEntity userEntity = userRepository.findByEmail(email)
                 .orElseThrow(() -> new UsernameNotFoundException("User not found"));
         userEntity.setPassword(passwordEncoder.encode(newPassword));
