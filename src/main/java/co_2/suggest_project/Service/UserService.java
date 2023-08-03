@@ -4,6 +4,7 @@ import co_2.suggest_project.Entity.UserEntity;
 import co_2.suggest_project.Model.UserDTO;
 import co_2.suggest_project.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.HashMap;
@@ -15,16 +16,19 @@ import java.util.stream.Collectors;
 public class UserService {
     private final UserRepository userRepository;
     private final EmailService emailService;
+    private final PasswordEncoder passwordEncoder; // 비밀번호 암호화
 
-    @Autowired    //Aotowired를 통해 의존성주입 -> UserRepository 주입
-    public UserService(UserRepository userRepository, EmailService emailService){
+    @Autowired    //Autowired를 통해 의존성주입 -> UserRepository 주입
+    public UserService(UserRepository userRepository, EmailService emailService, PasswordEncoder passwordEncoder){
         this.userRepository = userRepository;
         this.emailService = emailService;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Transactional
     public void insertUser(UserDTO userDTO) {          //UserDTO -> UserEntity 변환
         UserEntity userEntity = UserEntity.fromDTO(userDTO);
+        userEntity.setPassword(passwordEncoder.encode(userDTO.getPassword()));
         userRepository.save(userEntity);
     }
 
