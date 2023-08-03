@@ -4,6 +4,7 @@ import co_2.suggest_project.Entity.UserEntity;
 import co_2.suggest_project.Model.UserDTO;
 import co_2.suggest_project.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
@@ -31,6 +32,7 @@ public class UserService {
         userEntity.setPassword(passwordEncoder.encode(userDTO.getPassword()));
         userRepository.save(userEntity);
     }
+
 
 
 //    @Transactional
@@ -63,4 +65,37 @@ public class UserService {
         String correctCode = verificationCodes.get(email);
         return correctCode != null && correctCode.equals(inputCode);
     }
+
+    public boolean changePassword(String email, String currentPassword, String newPassword, String confirmNewPassword) {
+        UserEntity userEntity = userRepository.findByEmail(email).orElse(null);
+
+        if (userEntity == null || !passwordEncoder.matches(currentPassword, userEntity.getPassword())) {
+            return false;
+        }
+        if (!newPassword.equals(confirmNewPassword)) {
+            return false;
+        }
+        userEntity.setPassword(passwordEncoder.encode(newPassword));
+        userRepository.save(userEntity);
+        return true;
+    }
+
+    public void createPasswordResetCode(String email) {
+        // 인증 코드 생성
+        String code = emailService.generateVerificationCode();
+        // 이메일로 인증 코드 전송
+        emailService.sendVerificationEmail(email, code);
+        // 인증 코드 저장
+        verificationCodes.put(email, code);
+    }
+
+    @Transactional
+    public void changePassword(String email, String newPassword) {
+        UserEntity userEntity = userRepository.findByEmail(email)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+        userEntity.setPassword(passwordEncoder.encode(newPassword));
+        userRepository.save(userEntity);
+    }
+
+
 }
