@@ -45,6 +45,6 @@ public class EmailService {
 
         sendSimpleMessage(recipientEmail, subject, text);
     }
-
+//
 
 }
