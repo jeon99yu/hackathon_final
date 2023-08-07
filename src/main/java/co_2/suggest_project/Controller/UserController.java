@@ -27,7 +27,7 @@ public class UserController {
     @GetMapping("/test")
     public UserDTO test(){
         UserDTO userDTO = new UserDTO();
-        userDTO.setUserName("서빈");
+        userDTO.setNickName("서빈");
         userDTO.setPassword("1234");
         userDTO.setEmail("111@naver.com");
         userDTO.setRole("회원");
@@ -40,7 +40,7 @@ public class UserController {
     public void testInsertUser() {
         UserDTO userDTO = new UserDTO();
      //   userDTO.setUserId(1L);     UserId는 필요없음.
-        userDTO.setUserName("서빈");
+        userDTO.setNickName("서빈");
         userDTO.setPassword("1234");
         userDTO.setEmail("1111@naver.com");
         userDTO.setRole("회원");

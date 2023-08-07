@@ -14,7 +14,7 @@ public class UserEntity {
     private Long userId;
 
     @Column(nullable = false)
-    private String userName;
+    private String nickName;
 
     @Column(nullable = false)
     private String password;
@@ -28,7 +28,7 @@ public class UserEntity {
     public static UserEntity fromDTO(UserDTO userDTO) {
         UserEntity userEntity = new UserEntity();
         userEntity.setUserId(userDTO.getUserId());
-        userEntity.setUserName(userDTO.getUserName());
+        userEntity.setNickName(userDTO.getNickName());
         userEntity.setEmail(userDTO.getEmail());
         userEntity.setPassword(userDTO.getPassword());
         userEntity.setRole(userDTO.getRole());

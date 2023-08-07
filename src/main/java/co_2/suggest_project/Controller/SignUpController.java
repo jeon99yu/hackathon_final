@@ -4,6 +4,8 @@ import co_2.suggest_project.Entity.UserEntity;
 import co_2.suggest_project.Model.UserDTO;
 import co_2.suggest_project.Repository.UserRepository;
 import co_2.suggest_project.Service.UserService;
+import co_2.suggest_project.Utils.JwtUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -30,7 +32,7 @@ public class SignUpController {
     }
     @PostMapping("/signup")
     public ResponseEntity<?> signup (@RequestBody HashMap<String, Object> map) throws Exception {
-        String username = map.get("username").toString();
+        String nickName = map.get("nickName").toString();
         String email = map.get("email").toString();
         String password = map.get("password").toString();
         String role = map.get("role").toString();
@@ -45,7 +47,7 @@ public class SignUpController {
         }
 
         UserDTO userDTO = new UserDTO();
-        userDTO.setUserName(username);
+        userDTO.setNickName(nickName);
         userDTO.setPassword(password);
         userDTO.setEmail(email);
         userDTO.setRole(role);
@@ -62,22 +64,25 @@ public class SignUpController {
         return ResponseEntity.ok().body("Verification code has been sent to " + email);
     }
 
+    @Autowired
+    private JwtUtil jwtUtil;
+
     @PostMapping("/signin")
     public ResponseEntity<?> signin(@RequestBody Map<String, String> credentials) {
         String email = credentials.get("email");
         String password = credentials.get("password");
-
         // 1. 이메일로 사용자 찾기
         Optional<UserEntity> optionalUser = userRepository.findByEmail(email);
         if (!optionalUser.isPresent()) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("존재하지 않는 이메일입니다.");
         }
-
         // 2. 비밀번호 일치 여부 확인
         UserEntity user = optionalUser.get();
         if (!passwordEncoder.matches(password, user.getPassword())) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("비밀번호가 틀렸습니다.");
         }
-        return ResponseEntity.ok().body("로그인 완료");
+        String token = jwtUtil.createToken(email);
+        return ResponseEntity.ok().body("로그인 완료. 토큰: "+token);
     }
+
 }

@@ -16,7 +16,7 @@ import javax.persistence.Id;
 public class UserDTO {
 
     private Long userId;
-    private String userName;
+    private String nickName;
     private String password;
     private String email;
     private String role;
@@ -24,7 +24,7 @@ public class UserDTO {
     public static UserDTO fromEntity(UserEntity userEntity) {
         UserDTO userDTO = new UserDTO();
         userDTO.setUserId(userEntity.getUserId());
-        userDTO.setUserName(userEntity.getUserName());
+        userDTO.setNickName(userEntity.getUserName());
         userDTO.setEmail(userEntity.getEmail());
         userDTO.setPassword(userEntity.getPassword());
         userDTO.setRole(userEntity.getRole());
