@@ -69,6 +69,7 @@ public class UserDTO {
             this.confirmNewPassword = confirmNewPassword;
         }
 
+
     }
 }
 

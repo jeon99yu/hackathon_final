@@ -9,5 +9,4 @@ class SuggestProjectApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }

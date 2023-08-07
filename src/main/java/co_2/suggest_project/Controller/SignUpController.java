@@ -84,5 +84,4 @@ public class SignUpController {
         String token = jwtUtil.createToken(email);
         return ResponseEntity.ok().body("로그인 완료. 토큰: "+token);
     }
-
 }
