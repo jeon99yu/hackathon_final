@@ -70,6 +70,5 @@ public class UserDTO {
         }
 
     }
-
 }
 

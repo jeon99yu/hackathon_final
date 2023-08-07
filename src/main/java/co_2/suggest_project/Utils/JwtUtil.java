@@ -39,6 +39,6 @@ public class JwtUtil {
     public String getEmailFromToken(String token) {
         return Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token).getBody().getSubject();
     }
-
+//
 
 }
