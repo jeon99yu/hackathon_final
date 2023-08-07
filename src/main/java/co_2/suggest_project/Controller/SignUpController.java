@@ -85,5 +85,4 @@ public class SignUpController {
         return ResponseEntity.ok().body("로그인 완료. 토큰: "+token);
     }
 
-
 }
