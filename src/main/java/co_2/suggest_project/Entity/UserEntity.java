@@ -34,5 +34,4 @@ public class UserEntity {
         userEntity.setRole(userDTO.getRole());
         return userEntity;
     }
-
 }

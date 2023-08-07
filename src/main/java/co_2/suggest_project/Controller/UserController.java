@@ -53,5 +53,4 @@ public class UserController {
         return result ? new ResponseEntity<>(HttpStatus.OK) : new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
-
 }

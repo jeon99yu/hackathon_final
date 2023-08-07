@@ -36,5 +36,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/admin/**").hasRole("ADMIN")  // ADMIN 역할을 가진 사용자만 접근 가능
                 .anyRequest().permitAll();
     }
-
 }

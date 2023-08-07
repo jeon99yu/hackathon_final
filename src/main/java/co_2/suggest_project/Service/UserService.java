@@ -96,5 +96,4 @@ public class UserService {
         userEntity.setPassword(passwordEncoder.encode(newPassword));
         userRepository.save(userEntity);
     }
-
 }
