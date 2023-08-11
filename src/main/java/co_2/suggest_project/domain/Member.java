@@ -16,7 +16,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(name = "members")
-public class Member {
+public class Member { //회원 엔티티
   @Id @GeneratedValue
   @Column(name = "member_id")
   private Long id;

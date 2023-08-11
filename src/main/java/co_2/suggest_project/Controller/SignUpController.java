@@ -18,7 +18,7 @@ import java.util.Map;
 import java.util.Optional;
 
 @RestController
-public class SignUpController {
+public class SignUpController { //회원가입 컨트롤러
 
     private UserService userService;
     private UserRepository userRepository;

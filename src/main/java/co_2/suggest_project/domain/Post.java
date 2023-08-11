@@ -16,15 +16,19 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.w3c.dom.Text;
 
 @Entity
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Setter
 @Table(name = "posts")
-public class Post {
+public class Post { //게시물 엔티티
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -59,6 +63,17 @@ public class Post {
   private String expirationDate;
 
   private PostStatus status; // 게시글 상태 [ACTIVATED, DISABLED]
+
+  @Builder
+  public Post(String title, String content) {
+    this.title = title;
+    this.content = content;
+  }
+  //게시글 수정
+  public void update(String title, String content) {
+    this.title = title;
+    this.content = content;
+  }
 
   public void addComment(Comment comment) {
     comments.add(comment);
