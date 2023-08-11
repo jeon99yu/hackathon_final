@@ -21,6 +21,7 @@ public class MemberService {
     return member.getId();
 
   }
+
   private void validateDuplicateMember(Member member) {
     List<Member> findMembers =
         memberRepository.findByName(member.getNickname());
@@ -29,7 +30,7 @@ public class MemberService {
     }
   }
 
-//  전체 회원 조회
+  //  전체 회원 조회
   public List<Member> findMembers() {
     return memberRepository.findAll();
   }

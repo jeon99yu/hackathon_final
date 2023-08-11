@@ -18,5 +18,4 @@ public class AddPostRequestDTO {
         .content(content)
         .build();
   }
-
 }

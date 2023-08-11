@@ -13,5 +13,4 @@ public class PostResponseDTO {
     this.title = post.getTitle();
     this.content = post.getContent();
   }
-
 }

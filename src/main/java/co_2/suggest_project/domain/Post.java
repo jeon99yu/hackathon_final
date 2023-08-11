@@ -28,7 +28,7 @@ import org.w3c.dom.Text;
 @Getter
 @Setter
 @Table(name = "posts")
-public class Post {
+public class Post { //게시물 엔티티
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -37,7 +37,7 @@ public class PostService {
   @Transactional
   public Post update(long id, UpdatePostRequestDTO request) {
 //    Post post = postRepository.findById(id);
-  return post;
+//  return post;
 
   }
 }

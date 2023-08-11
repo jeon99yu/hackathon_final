@@ -27,7 +27,7 @@ public class MemberRepository {
 
   public List<Member> findByName(String nickname) { //닉네임으로 찾기 vs 이메일로 찾기 둘 중 고민이다..
     return em.createQuery("select m from Member m where m.nickname = :nickname",
-        Member.class)
+            Member.class)
         .setParameter("nickname", nickname)
         .getResultList();
   }
