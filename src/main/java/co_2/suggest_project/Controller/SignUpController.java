@@ -9,9 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -30,7 +28,7 @@ public class SignUpController {
         this.passwordEncoder = passwordEncoder;
 
     }
-    @PostMapping("/signup")
+    @PostMapping("/users/signup")
     public ResponseEntity<?> signup (@RequestBody HashMap<String, Object> map) throws Exception {
         String nickName = map.get("nickName").toString();
         String email = map.get("email").toString();
@@ -57,7 +55,7 @@ public class SignUpController {
         return ResponseEntity.status(HttpStatus.CREATED).body("회원가입이 완료되었습니다.");
     }
 
-    @PostMapping("/generateCode")
+    @PostMapping("/users/generateCode")
     public ResponseEntity<?> generateCode(@RequestBody Map<String, String> map) {
         String email = map.get("email");
         userService.createVerificationCode(email);
@@ -67,7 +65,7 @@ public class SignUpController {
     @Autowired
     private JwtUtil jwtUtil;
 
-    @PostMapping("/signin")
+    @PostMapping("/users/login")
     public ResponseEntity<?> signin(@RequestBody Map<String, String> credentials) {
         String email = credentials.get("email");
         String password = credentials.get("password");
@@ -84,4 +82,7 @@ public class SignUpController {
         String token = jwtUtil.createToken(email);
         return ResponseEntity.ok().body("로그인 완료. 토큰: "+token);
     }
+
+
+
 }
