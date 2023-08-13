@@ -34,10 +34,9 @@ public class PostService {
     postRepository.deleteById(id);
   }
   //게시글 수정
-  @Transactional
-  public Post update(long id, UpdatePostRequestDTO request) {
+//  @Transactional
+//  public Post update(long id, UpdatePostRequestDTO request) {
 //    Post post = postRepository.findById(id);
 //  return post;
-
-  }
+//  }
 }
