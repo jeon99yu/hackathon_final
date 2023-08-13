@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      th:href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Do+Hyeon&family=Inter:wght@500;900&family=Nanum+Gothic:wght@800&family=Noto+Sans+KR:wght@900&family=Secular+One&display=swap"
+      rel="stylesheet"
+    />
+    <link th:href="@{/login.css}" rel="stylesheet" />
+    <link rel="icon" type="image/png" th:href="@{/img/logo2.png}" />
+    <title>MJ_moment 로그인페이지</title>
+    <script
+      th:src="https://kit.fontawesome.com/b71264a403.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div
+      style="width: 1366x; height: 768px; position: relative; background: white"
+    >
+      <div class="title">학교가 불편할 때는,<br />언제였나요?</div>
+      <div class="detail">
+        학교를 다니면서 불편함을 느꼈던 적이 있다면 자유롭게 의견을 남겨주세요.
+      </div>
+
+      <button class="login_button" type="button" onclick="login()">
+        Login
+      </button>
+      <button class="signup_button" type="button" onclick="signup()">
+        Sign Up
+      </button>
+
+      <div class="id-container">
+        <div class="id-label">이메일</div>
+        <div class="id-field">
+          <div class="id-bg"></div>
+          <input
+            type="text"
+            id="id"
+            placeholder=" 이메일(@mju.ac.kr)을 입력하세요"
+          />
+        </div>
+      </div>
+      <div class="pw-container">
+        <div class="pw-label">비밀번호</div>
+        <div class="pw-field">
+          <div class="pw-bg"></div>
+          <div class="content">
+            <input
+              type="password"
+              id="password"
+              placeholder=" 비밀번호를 입력하세요 (6~16자)"
+            />
+            <span class="show-hide">
+              <i class="fa fa-eye"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        const pass_field = document.getElementById("password");
+        const show_btn = document.querySelector(".show-hide");
+
+        show_btn.addEventListener("click", function () {
+          if (pass_field.type === "password") {
+            pass_field.type = "text";
+            show_btn.classList.add("hide");
+          } else {
+            pass_field.type = "password";
+            show_btn.classList.remove("hide");
+          }
+        });
+      </script>
+
+      <img class="logo" th:src="@{/img/logo.png}" />
+      <img class="postit" th:src="@{/img/post it.png}" />
+    </div>
+
+    <script th:src="@{/login.js}"></script>
+  </body>
+</html>

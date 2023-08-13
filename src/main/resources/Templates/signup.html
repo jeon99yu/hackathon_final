@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link th:href="@{/signup.css}" rel="stylesheet" />
+    <link rel="icon" type="image/png" th:href="@{/img/logo2.png}" />
+    <title>MJ_moment 회원가입페이지</title>
+    <script
+      th:src="https://kit.fontawesome.com/b71264a403.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="split-container">
+        <div class="image-container">
+          <img src="img/logo.png" id="logoIMG" alt="회원가입 이미지" />
+        </div>
+        <div class="form-container">
+          <div class="form-wrapper">
+            <div class="title">회원가입</div>
+            <div class="cancel" onclick="goToMain()">↪취소</div>
+
+            <div class="input-field-profile">
+              <div class="input-label">이름/닉네임 설정</div>
+              <div class="input-box">
+                <input type="text" id="name" placeholder=" 이름" />
+                <input
+                  type="text"
+                  id="nickname"
+                  placeholder=" 닉네임 (최대 10자)"
+                />
+              </div>
+            </div>
+
+            <div class="input-field-email">
+              <div class="input-box">
+                <div class="input-label">이메일 인증</div>
+                <input
+                  type="text"
+                  id="email"
+                  placeholder=" 이메일을 입력하세요"
+                />
+                <select class="box" id="domain-list">
+                  <option value="mju.ac.kr">@mju.ac.kr</option>
+                </select>
+                <button id="certBTN">인증번호 받기</button>
+                <input
+                  type="text"
+                  id="num"
+                  placeholder=" 인증번호를 입력하세요"
+                />
+                <button id="submitBTN" type="submit">인증번호 확인</button>
+              </div>
+            </div>
+
+            <div class="input-field-pw">
+              <div class="input-label">비밀번호 설정</div>
+              <div class="input-box">
+                <div class="input-border"></div>
+                <div class="content">
+                  <input
+                    type="password"
+                    id="pw"
+                    placeholder=" 비밀번호를 입력하세요 (6~16자)"
+                  />
+                  <span class="show-hide">
+                    <i class="fa fa-eye"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="input-field-pw">
+              <div class="input-box">
+                <div class="input-border"></div>
+                <div class="content">
+                  <input
+                    type="password"
+                    id="pw-confirm"
+                    placeholder=" 비밀번호를 한번 더 입력하세요"
+                  />
+                  <span class="show-hide-confirm">
+                    <i class="fa fa-eye"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <script>
+              const pass_field = document.getElementById("pw");
+              const pass_confirm_field = document.getElementById("pw-confirm");
+              const show_btn = document.querySelector(".show-hide");
+              const show_btn_confirm =
+                document.querySelector(".show-hide-confirm");
+
+              show_btn.addEventListener("click", function () {
+                if (pass_field.type === "password") {
+                  pass_field.type = "text";
+                  show_btn.classList.add("hide");
+                } else {
+                  pass_field.type = "password";
+                  show_btn.classList.remove("hide");
+                }
+              });
+
+              show_btn_confirm.addEventListener("click", function () {
+                if (pass_confirm_field.type === "password") {
+                  pass_confirm_field.type = "text";
+                  show_btn_confirm.classList.add("hide");
+                } else {
+                  pass_confirm_field.type = "password";
+                  show_btn_confirm.classList.remove("hide");
+                }
+              });
+            </script>
+
+            <button class="signupBTN" type="button" onclick="signup()">
+              가입하기
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script th:src="@{/signup.js}"></script>
+  </body>
+</html>

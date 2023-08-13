@@ -1,0 +1,220 @@
+body {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* 헤더요소 */
+#header {
+  background: whitesmoke;
+  width: 90%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+#header h2 {
+  color: darkblue;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: "Black Han Sans", sans-serif;
+  margin: 0;
+}
+#header ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+#header ul li {
+  margin-left: 10px;
+}
+#header ul li a {
+  text-decoration: none;
+  color: darkblue;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
+}
+#header ul li:first-child {
+  margin-left: auto;
+}
+#header ul li a:hover {
+  background-color: #ddd;
+}
+#wrap {
+  width: 90%;
+  max-width: 1000px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 사이드바 요소  */
+#side {
+  flex: 0 0 300px;
+  height: 600px;
+  background: white;
+  margin: 30px 10px;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+#side img {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#side h2 {
+  font-family: "Noto Sans KR", sans-serif;
+  color: darkblue;
+}
+#myprofile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-style: border-box;
+  border: solid 2px rgb(163, 163, 163);
+  border-radius: 5px;
+}
+#myprofile p {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: large;
+}
+
+/* 섹션요소 */
+#section {
+  flex: 0 0 700px;
+  height: 600px;
+  background: white;
+  margin: 30px 0px;
+  padding-top: 48px;
+}
+#list h2 {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 25px;
+  padding-top: 20px;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  display: inline;
+}
+
+#mywrite {
+  border-style: border-box;
+  border: solid 2px rgb(163, 163, 163);
+  border-radius: 5px;
+  margin-bottom: 10px;
+  flex-direction: column;
+  overflow-y: auto;
+  max-height: 310px;
+}
+#mycomments {
+  border-style: border-box;
+  border: solid 2px rgb(163, 163, 163);
+  border-radius: 5px;
+  flex-direction: column;
+  overflow-y: auto;
+  max-height: 200px;
+}
+#postList {
+  display: inline;
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+}
+#postList li {
+  margin-bottom: 10px;
+  margin-left: 20px;
+  position: relative;
+}
+
+#postList li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -5%;
+  height: 100%;
+  width: 3.5px;
+  background-color: #ccc;
+}
+
+/*하단바 요소*/
+#footer {
+  display: flex;
+  height: 80px;
+  justify-content: center;
+  clear: left;
+  align-items: center;
+  background: #ffffff;
+  color: #333;
+}
+
+/* 버튼요소 */
+.delete-button,
+.edit-button {
+  background-color: #ffffff;
+  font-family: "Noto Sans KR", sans-serif;
+  border: none;
+  border-radius: 3px;
+  transition: background-color 0.1s ease;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.delete-button {
+  color: rgb(213, 26, 26);
+}
+
+.edit-button {
+  color: rgb(18, 10, 161);
+}
+
+.delete-button:hover,
+.edit-button:hover {
+  background-color: rgb(201, 195, 195);
+  color: rgb(255, 255, 255);
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+/* 수정 form */
+#editForm {
+  display: none;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+#editContent {
+  resize: none;
+  width: 98%;
+  padding: 5px;
+  border-style: border-box;
+  border: solid 2px rgb(163, 163, 163);
+  border-radius: 5px;
+}
+
+#editSubmitBtn {
+  background-color: darkblue;
+  color: #ffffff;
+  font-family: "Noto Sans KR", sans-serif;
+  border: none;
+  border-radius: 3px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+  margin-top: 5px;
+}
+
+#editSubmitBtn:hover {
+  background-color: #b9b9b9;
+  color: darkblue;
+}

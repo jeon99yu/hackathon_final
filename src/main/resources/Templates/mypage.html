@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      th:href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      th:href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link th:href="@{/mypage.css}" rel="stylesheet" />
+    <link rel="icon" type="image/png" th:href="@{/img/logo2.png}" />
+    <title>MJ_moment 마이페이지</title>
+  </head>
+  <body>
+    <div id="header">
+      <h2>MJ_moment | 학교가 불편한 순간</h2>
+      <ul>
+        <li><a th:href="@{/page.html}">HOME</a></li>
+      </ul>
+    </div>
+    <div id="wrap">
+      <div id="side">
+        <h2>MY PROFILE.</h2>
+        <div id="myprofile">
+          <div id="imo">
+            <img src="img/profile.jpg" alt="img" />
+          </div>
+          <div id="nickname">
+            <p id="nicknameText"><!-- 닉네임표시될 부분 --></p>
+          </div>
+        </div>
+      </div>
+      <div id="section">
+        <div id="list">
+          <h2>내가 작성한 글 💬 <span id="postCount"></span></h2>
+          <div id="mywrite" class="button-container">
+            <ul id="postList">
+              <!-- 추가될 게시물 목록 -->
+            </ul>
+          </div>
+          <div id="editForm" style="display: none">
+            <h3>글 수정</h3>
+            <textarea id="editContent" rows="4" cols="50"></textarea>
+            <button id="editSubmitBtn" type="button">저장</button>
+          </div>
+          <h2>내가 작성한 댓글 💬 <span id="commentCount"></span></h2>
+          <div id="mycomments" class="button-container">
+            <ul id="commentList">
+              <!-- 추가될 댓글 목록 -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <p>명지대학교 건의사항 페이지 | 2023</p>
+    </div>
+    <script th:src="@{/mypage.js}"></script>
+  </body>
+</html>

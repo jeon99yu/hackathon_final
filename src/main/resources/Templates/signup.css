@@ -1,0 +1,336 @@
+.container {
+  width: 1366px;
+  height: 768px;
+  position: relative;
+  background: white;
+}
+
+.split-container {
+  display: flex;
+}
+
+.image-container {
+  flex: 1;
+  padding: 0;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: 150px;
+}
+
+.form-container {
+  flex: 1;
+  padding: 20px;
+}
+
+#logoIMG {
+  max-width: 100%;
+  max-height: 100%;
+  transform: scale(0.9);
+}
+
+/* 회원가입 폼 설정 */
+.form-wrapper {
+  width: 371px;
+  height: 630px;
+  left: 900px;
+  top: 50px;
+  position: absolute;
+  background: white;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 0.5px #e1e2e3 solid;
+}
+
+.title {
+  text-align: center;
+  width: 100%;
+  height: 40px;
+  line-height: 70px;
+  color: black;
+  font-size: 18px;
+  font-family: Pretendard;
+  font-weight: 700;
+}
+
+.cancel {
+  width: 50px;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 20px;
+  color: rgb(126, 124, 124);
+  font-size: 14px;
+  font-family: Inter;
+  font-weight: bolder;
+}
+
+.cancel:hover {
+  color: #000000;
+  cursor: pointer;
+}
+/* 필드 요소 */
+.input-field-profile {
+  width: 330px;
+  height: 80px;
+  margin: 20px auto 5px auto;
+}
+
+.input-field-email {
+  width: 330px;
+  height: 200px;
+  margin: 0px auto 0 auto;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.input-field-pw {
+  width: 330px;
+  height: 55px;
+  margin: 20px 20px 0;
+}
+
+.input-field-pw2
+
+/* 필드 공통요소 */
+.input-box {
+  width: 330px;
+  height: auto;
+}
+
+.input-label {
+  color: #888888;
+  font-size: 14px;
+  font-family: Pretendard;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+/* 개별 요소 */
+#email {
+  width: 180px;
+  height: 43px;
+  color: #000000;
+  font-size: 14px;
+  font-family: Pretendard;
+  font-weight: 600;
+  font-style: normal;
+  background: #fff;
+  border: 1px solid #e1e2e3;
+  border-radius: 5px;
+}
+
+#domain-list {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#id {
+  width: 325px;
+  height: 46px;
+  margin: 25px 0;
+  position: absolute;
+  transform: translateY(-50%);
+  color: #000000;
+  font-size: 14px;
+  font-family: Pretendard;
+  font-weight: 600;
+  font-style: normal;
+  background: #fff;
+  border: 1px solid #e1e2e3;
+  border-radius: 5px;
+  flex-shrink: 0;
+}
+
+#pw {
+  width: 325px;
+  height: 46px;
+  margin: 25px 0;
+  position: absolute;
+  transform: translateY(-50%);
+  color: #000000;
+  font-size: 14px;
+  font-family: Pretendard;
+  font-weight: 600;
+  font-style: normal;
+  background: #fff;
+  border: 1px solid #e1e2e3;
+  border-radius: 5px;
+  flex-shrink: 0;
+}
+
+#pw-confirm {
+  width: 325px;
+  height: 46px;
+  margin: 25px 0;
+  position: absolute;
+  transform: translateY(-50%);
+  color: #000000;
+  font-size: 14px;
+  font-family: Pretendard;
+  font-weight: 600;
+  font-style: normal;
+  background: #fff;
+  border: 1px solid #e1e2e3;
+  border-radius: 5px;
+  flex-shrink: 0;
+}
+
+#name {
+  width: 150px;
+  height: 40px;
+  font-size: 14px;
+  font-family: Pretendard;
+  font-weight: 600;
+  font-style: normal;
+  border: 1px solid #e1e2e3;
+  border-radius: 5px;
+}
+
+#nickname {
+  width: 150px;
+  height: 40px;
+  font-size: 14px;
+  font-family: Pretendard;
+  font-weight: 600;
+  font-style: normal;
+  border: 1px solid #e1e2e3;
+  border-radius: 5px;
+}
+
+#num {
+  width: 180px;
+  height: 40px;
+  margin: 10px 5px 10px 0;
+  color: #000000;
+  font-size: 14px;
+  font-family: Pretendard;
+  font-weight: 600;
+  font-style: normal;
+  background: #fff;
+  border: 1px solid #e1e2e3;
+  border-radius: 5px;
+}
+
+.box {
+  width: 130px;
+  height: 46px;
+  margin: 25px 0;
+  color: #000000;
+  font-size: 14px;
+  font-family: Pretendard;
+  font-weight: 600;
+  font-style: normal;
+  background: #fff;
+  border: 1px solid #e1e2e3;
+  border-radius: 5px;
+}
+
+/* 버튼요소 */
+#certBTN {
+  margin-top: 5px;
+  margin-bottom: 0;
+  width: 320px;
+  height: 35px;
+  background: #f2f4f7;
+  color: #7b7878;
+  font-weight: bold;
+  border: 1px solid #e1e2e3;
+  border-radius: 5px;
+}
+
+#certBTN:hover {
+  background: #95b7e0;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+}
+
+#submitBTN {
+  width: 125px;
+  height: 40px;
+  font-family: Pretendard;
+  margin: 10px 0 10px 0;
+  background: #f2f4f7;
+  color: #7b7878;
+  border: 1px solid #e1e2e3;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+#submitBTN:hover {
+  background: #95b7e0;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+}
+
+.signupBTN {
+  width: 330px;
+  height: 49px;
+  flex-shrink: 0;
+  border-radius: 90px;
+  background: #f2f4f7;
+  color: #ccc;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border: #f2f4f7;
+  margin: 20px;
+}
+
+.signupBTN:hover {
+  background: #95b7e0;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+}
+
+/*비밀번호 표시 및 숨기기*/
+.content {
+  height: 50px;
+  width: 280px;
+  display: flex;
+  position: relative;
+}
+
+.content input {
+  height: 100%;
+  width: 100%;
+  border-radius: 3px;
+  outline: none;
+}
+.show-hide {
+  position: absolute;
+  right: -45px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.show-hide i {
+  font-size: 19px;
+  cursor: pointer;
+}
+
+.show-hide:hover i:before {
+  content: "\f070";
+}
+
+.show-hide-confirm {
+  position: absolute;
+  right: -45px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.show-hide-confirm i {
+  font-size: 19px;
+  cursor: pointer;
+}
+
+.show-hide-confirm:hover i:before {
+  content: "\f070";
+}
