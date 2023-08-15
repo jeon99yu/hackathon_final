@@ -3,11 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link th:href="@{/signup.css}" rel="stylesheet" />
-    <link rel="icon" type="image/png" th:href="@{/img/logo2.png}" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/src/main/resources/static/css/signup.css"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/src/main/resources/static/images/logo2.png"
+    />
     <title>MJ_moment 회원가입페이지</title>
     <script
-      th:src="https://kit.fontawesome.com/b71264a403.js"
+      src="https://kit.fontawesome.com/b71264a403.js"
       crossorigin="anonymous"
     ></script>
   </head>
@@ -15,7 +23,7 @@
     <div class="container">
       <div class="split-container">
         <div class="image-container">
-          <img src="img/logo.png" id="logoIMG" alt="회원가입 이미지" />
+          <img src="/src/main/resources/static/images/logo.png" id="logoIMG" alt="회원가입 이미지" />
         </div>
         <div class="form-container">
           <div class="form-wrapper">
@@ -88,34 +96,6 @@
               </div>
             </div>
 
-            <script>
-              const pass_field = document.getElementById("pw");
-              const pass_confirm_field = document.getElementById("pw-confirm");
-              const show_btn = document.querySelector(".show-hide");
-              const show_btn_confirm =
-                document.querySelector(".show-hide-confirm");
-
-              show_btn.addEventListener("click", function () {
-                if (pass_field.type === "password") {
-                  pass_field.type = "text";
-                  show_btn.classList.add("hide");
-                } else {
-                  pass_field.type = "password";
-                  show_btn.classList.remove("hide");
-                }
-              });
-
-              show_btn_confirm.addEventListener("click", function () {
-                if (pass_confirm_field.type === "password") {
-                  pass_confirm_field.type = "text";
-                  show_btn_confirm.classList.add("hide");
-                } else {
-                  pass_confirm_field.type = "password";
-                  show_btn_confirm.classList.remove("hide");
-                }
-              });
-            </script>
-
             <button class="signupBTN" type="button" onclick="signup()">
               가입하기
             </button>
@@ -124,6 +104,6 @@
       </div>
     </div>
 
-    <script th:src="@{/signup.js}"></script>
+    <script src="/src/main/resources/static/js/signup.js"></script>
   </body>
 </html>

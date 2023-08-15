@@ -31,7 +31,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
-            .antMatchers("/css/**", "/js/**", "/images/**", "/webjars/**").permitAll()
+            .antMatchers("/css/**", "/js/**", "/images/**", "/webjars/**").permitAll() //정적 파일에 대한 권한 허용 설정
             .antMatchers("/admin/**").hasRole("ADMIN")  // ADMIN 역할을 가진 사용자만 접근 가능
             .anyRequest().permitAll()
             .and()
