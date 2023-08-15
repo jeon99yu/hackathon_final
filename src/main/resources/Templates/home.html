@@ -1,42 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" type="text/css" href="/src/main/resources/static/css/home.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" type="text/css"/>
-    <link rel="icon" type="image/png" href="/images/logo2.png"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/src/main/resources/static/css/home.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      type="text/css"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/src/main/resources/static/images/logo2.png"
+    />
     <title>MJ_moment</title>
   </head>
   <body>
     <!-- header (nav-bar)-->
     <nav class="navbar">
       <div class="navbar__logo">
-        <img src="/src/main/resources/static/images/logo(115x30).png"/>
+        <a href="/src/main/resources/templates/home.html"
+          ><img src="/src/main/resources/static/images/logo(115x30).png"
+        /></a>
       </div>
 
       <ul class="navbar__menu">
-        <li class="nav-item"><a class="nav-link" href="main.html">홈</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">소개</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">공지사항</a></li>
-        <li class="nav-item"><a class="nav-link" href="">건의하기</a></li>
         <li class="nav-item">
-          <a class="nav-link" th:href="@{src/main/resources/templates/page.html}">건의목록</a>
+          <a class="nav-link" href="/src/main/resources/templates/main.html"
+            >소개</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" th:href="@{src/main/resources/templates/mypage.html}">마이페이지</a>
+          <a class="nav-link" href="/src/main/resources/templates/page.html"
+            >건의하기</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" th:href="@{src/main/resources/templates/login.html}">로그인</a>
+          <a class="nav-link" href="/src/main/resources/templates/mypage.html"
+            >마이페이지</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" th:href="@{src/main/resources/templates/signup.html}">회원가입</a>
+          <a class="nav-link" href="/src/main/resources/templates/login.html"
+            >로그인</a
+          >
         </li>
       </ul>
 
       <ul class="navbar__icons">
         <li class="nav-item">
-          <a class="nav-link" href="#"><img src="/src/main/resources/static/images/search-icon.png"/></a>
+          <a class="nav-link" href="#"
+            ><img src="/src/main/resources/static/images/search-icon.png"
+          /></a>
         </li>
       </ul>
     </nav>
@@ -95,7 +115,7 @@
       <h2 id="myTitle">MY PROFILE.</h2>
       <div id="myprofile">
         <div id="imo">
-          <img src="/src/main/resources/static/images/profile.jpg" alt="img"/>
+          <img src="/src/main/resources/static/images/profile.jpg" alt="img" />
         </div>
         <div id="nickname">
           <p id="nicknameText">닉네임<!-- 닉네임표시될 부분 --></p>
@@ -165,9 +185,11 @@
       <p>명지대학교 건의사항 페이지 | 2023</p>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-    crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
     <script src="/js/home.js"></script>
   </body>
 </html>
