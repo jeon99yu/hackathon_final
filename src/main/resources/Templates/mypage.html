@@ -26,12 +26,46 @@
     <title>MJ_moment 마이페이지</title>
   </head>
   <body>
-    <div id="header">
-      <h2>MJ_moment | 학교가 불편한 순간</h2>
-      <ul>
-        <li><a href="/src/main/resources/templates/page.html">HOME</a></li>
+    <!-- header (nav-bar)-->
+    <nav class="navbar">
+      <div class="navbar__logo">
+        <a href="/src/main/resources/templates/home.html"
+          ><img src="/src/main/resources/static/images/logo(115x30).png"
+        /></a>
+      </div>
+
+      <ul class="navbar__menu">
+        <li class="nav-item">
+          <a class="nav-link" href="/src/main/resources/templates/main.html"
+            >소개</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/src/main/resources/templates/page.html"
+            >건의하기</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/src/main/resources/templates/mypage.html"
+            >마이페이지</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/src/main/resources/templates/login.html"
+            >로그인</a
+          >
+        </li>
       </ul>
-    </div>
+
+      <ul class="navbar__icons">
+        <li class="nav-item">
+          <a class="nav-link" href="#"
+            ><img src="/src/main/resources/static/images/search-icon.png"
+          /></a>
+        </li>
+      </ul>
+    </nav>
+
     <div id="wrap">
       <div id="side">
         <h2>MY PROFILE.</h2>

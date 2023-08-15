@@ -1,5 +1,5 @@
 body {
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,49 +8,53 @@ body {
 }
 
 /* 헤더요소 */
-#header {
-  background: whitesmoke;
-  width: 90%;
-  height: 70px;
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 8px 12px;
+  background: #cadbf0;
 }
 
-#header h2 {
-  color: darkblue;
-  font-size: 40px;
-  font-weight: bold;
-  font-family: "Black Han Sans", sans-serif;
-  margin: 0;
+.navbar__logo {
+  text-align: center;
+  padding: 5px 30px;
 }
 
-#header ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-}
-
-#header ul li {
-  margin-left: 10px;
-}
-
-#header ul li a {
+.navbar a {
   text-decoration: none;
-  color: darkblue;
+  color: #002d65;
+  width: 130px;
+  display: block;
+  padding: 10px 6px;
+  font-size: 20px;
+  text-transform: uppercase;
   font-weight: bold;
-  padding: 5px;
-  border-radius: 5px;
+  text-align: center;
 }
 
-#header ul li:first-child {
-  margin-left: auto;
+.navbar__menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding-left: 0;
 }
 
-#header ul li a:hover {
-  background-color: #ddd;
+.navbar__menu li {
+  padding: 5px 30px;
+}
+
+.navbar__menu a:hover {
+  background: white;
+}
+
+.navbar__icons {
+  list-style: none;
+  display: flex;
+  margin: 0;
 }
 
 /* 보드요소 */

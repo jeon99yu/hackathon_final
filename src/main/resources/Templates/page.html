@@ -28,14 +28,46 @@
     <title>MJ_moment 메인페이지</title>
   </head>
   <body>
-    <div id="header">
-      <h2>MJ_moment | 학교가 불편한 순간</h2>
-      <ul>
-        <li>
-          <a href="/src/main/resources/templates/mypage.html">MY PAGE</a>
+    <!-- header (nav-bar)-->
+    <nav class="navbar">
+      <div class="navbar__logo">
+        <a href="/src/main/resources/templates/home.html"
+          ><img src="/src/main/resources/static/images/logo(115x30).png"
+        /></a>
+      </div>
+
+      <ul class="navbar__menu">
+        <li class="nav-item">
+          <a class="nav-link" href="/src/main/resources/templates/main.html"
+            >소개</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/src/main/resources/templates/page.html"
+            >건의하기</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/src/main/resources/templates/mypage.html"
+            >마이페이지</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/src/main/resources/templates/login.html"
+            >로그인</a
+          >
         </li>
       </ul>
-    </div>
+
+      <ul class="navbar__icons">
+        <li class="nav-item">
+          <a class="nav-link" href="#"
+            ><img src="/src/main/resources/static/images/search-icon.png"
+          /></a>
+        </li>
+      </ul>
+    </nav>
+    <br />
 
     <div id="board">
       <h2>학교가 불편할 때는, 언제였나요?</h2>
@@ -55,6 +87,6 @@
     <div id="footer">
       <p>명지대학교 건의사항 페이지 | 2023</p>
     </div>
-    <script th:src="/src/main/resources/static/js/page.js"></script>
+    <script src="/src/main/resources/static/js/page.js"></script>
   </body>
 </html>
