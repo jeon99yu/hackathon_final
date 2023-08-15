@@ -9,11 +9,9 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-
 
     @Bean
     public PasswordEncoder passwordEncoder(){
@@ -23,17 +21,27 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
-                .passwordEncoder(passwordEncoder())
-                .withUser("user")
-                .password(passwordEncoder().encode("password"))
-                .roles("USER");
+            .passwordEncoder(passwordEncoder())
+            .withUser("user")
+            .password(passwordEncoder().encode("password"))
+            .roles("USER");
     }
+
     @Override
-    protected void configure(HttpSecurity http)throws Exception {
+    protected void configure(HttpSecurity http) throws Exception {
         http
-                .csrf().disable()
-                .authorizeRequests()
-                .antMatchers("/admin/**").hasRole("ADMIN")  // ADMIN 역할을 가진 사용자만 접근 가능
-                .anyRequest().permitAll();
+            .authorizeRequests()
+            .antMatchers("/css/**", "/js/**", "/images/**", "/webjars/**").permitAll()
+            .antMatchers("/admin/**").hasRole("ADMIN")  // ADMIN 역할을 가진 사용자만 접근 가능
+            .anyRequest().permitAll()
+            .and()
+            .formLogin()
+            .loginPage("/login") // 로그인 페이지 URL
+            .permitAll()
+            .and()
+            .logout()
+            .permitAll()
+            .and()
+            .csrf().disable(); // CSRF 비활성화 (나중에 활성화하거나 보다 더 정교한 설정을 추가할 수 있음)
     }
 }

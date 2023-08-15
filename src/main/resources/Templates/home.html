@@ -1,176 +1,175 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" th:href="@{/home.css}" />
-    <link
-      th:href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link rel="icon" type="image/png" th:href="@{/img/logo2.png}" />
-    <title>MJ_moment</title>
-  </head>
-  <body>
-    <script
-      th:src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-      crossorigin="anonymous"
-    ></script>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" type="text/css" href="/src/main/resources/static/css/home.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" type="text/css"/>
+  <link rel="icon" type="image/png" href="/images/logo2.png"/>
+  <title>MJ_moment</title>
+</head>
+<!-- ... 이하 생략 ... -->
 
-    <!-- header (nav-bar)-->
-    <nav class="navbar">
-      <div class="navbar__logo">
-        <img src="img/logo(115x30).png" />
-      </div>
 
-      <ul class="navbar__menu">
-        <li class="nav-item">
-          <a class="nav-link" th:href="@{/main.html}">홈</a>
-        </li>
-        <li class="nav-item"><a class="nav-link" href="#">소개</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">공지사항</a></li>
-        <li class="nav-item"><a class="nav-link" href="">건의하기</a></li>
-        <li class="nav-item">
-          <a class="nav-link" th:href="@{/page.html}">건의목록</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" th:href="@{/mypage.html}">마이페이지</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" th:href="@{/login.html}">로그인</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" th:href="@{/signup.html}">회원가입</a>
-        </li>
-      </ul>
+<body>
+<!-- header (nav-bar)-->
+<nav class="navbar">
+  <div class="navbar__logo">
+    <img src="/src/main/resources/static/images/logo(115x30).png"/>
+  </div>
 
-      <ul class="navbar__icons">
-        <li class="nav-item">
-          <a class="nav-link" href="#"><img src="img/search-icon.png" /></a>
-        </li>
-      </ul>
-    </nav>
+  <ul class="navbar__menu">
+    <li class="nav-item">
+      <a class="nav-link" th:href="@{/src/main/resources/templates/main.html}">홈</a>
+    </li>
+    <li class="nav-item"><a class="nav-link" href="#">소개</a></li>
+    <li class="nav-item"><a class="nav-link" href="#">공지사항</a></li>
+    <li class="nav-item"><a class="nav-link" href="">건의하기</a></li>
+    <li class="nav-item">
+      <a class="nav-link" th:href="@{src/main/resources/templates/page.html}">건의목록</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" th:href="@{src/main/resources/templates/mypage.html}">마이페이지</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" th:href="@{src/main/resources/templates/login.html}">로그인</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" th:href="@{src/main/resources/templates/signup.html}">회원가입</a>
+    </li>
+  </ul>
 
-    <!-- preview-->
-    <br />
-    <h1 id="preview">Preview</h1>
+  <ul class="navbar__icons">
+    <li class="nav-item">
+      <a class="nav-link" href="#"><img src="/src/main/resources/static/images/search-icon.png"/></a>
+    </li>
+  </ul>
+</nav>
 
-    <!-- HTML 코드 -->
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <!-- 체크박스 컨테이너 -->
-          <div class="checkbox-container">
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="flexRadioDefault"
-                id="flexRadioDefault1"
-                style="font-size: 20px"
-              />
-              <label
-                class="form-check-label"
-                for="flexRadioDefault1"
-                style="font-size: 20px"
-              >
-                최다동의 순
-              </label>
-            </div>
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="flexRadioDefault"
-                id="flexRadioDefault2"
-                style="font-size: 20px"
-              />
-              <label
-                class="form-check-label"
-                for="flexRadioDefault2"
-                style="font-size: 20px"
-              >
-                최근공개 순
-              </label>
-            </div>
-          </div>
+<!-- preview-->
+<br/>
+<h1 id="preview">Preview</h1>
+
+<!-- HTML 코드 -->
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <!-- 체크박스 컨테이너 -->
+      <div class="checkbox-container">
+        <div class="form-check">
+          <input
+              class="form-check-input"
+              type="radio"
+              name="flexRadioDefault"
+              id="flexRadioDefault1"
+              style="font-size: 20px"
+          />
+          <label
+              class="form-check-label"
+              for="flexRadioDefault1"
+              style="font-size: 20px"
+          >
+            최다동의 순
+          </label>
+        </div>
+        <div class="form-check">
+          <input
+              class="form-check-input"
+              type="radio"
+              name="flexRadioDefault"
+              id="flexRadioDefault2"
+              style="font-size: 20px"
+          />
+          <label
+              class="form-check-label"
+              for="flexRadioDefault2"
+              style="font-size: 20px"
+          >
+            최근공개 순
+          </label>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <br /><br />
+<br/><br/>
 
-    <!-- site-login-->
-    <div class="sidebar">
-      <h2 id="myTitle">MY PROFILE.</h2>
-      <div id="myprofile">
-        <div id="imo">
-          <img src="img/profile.jpg" alt="img" />
-        </div>
-        <div id="nickname">
-          <p id="nicknameText">닉네임<!-- 닉네임표시될 부분 --></p>
-        </div>
-      </div>
+<!-- site-login-->
+<div class="sidebar">
+  <h2 id="myTitle">MY PROFILE.</h2>
+  <div id="myprofile">
+    <div id="imo">
+      <img src="/src/main/resources/static/images/profile.jpg" alt="img"/>
     </div>
+    <div id="nickname">
+      <p id="nicknameText">닉네임<!-- 닉네임표시될 부분 --></p>
+    </div>
+  </div>
+</div>
 
-    <div class="content">
-      <div class="card">
-        <h2>게시물 제목 1</h2>
-        <p>게시물 글 미리보기 요약</p>
-        <hr />
-        <button class="like-button">
-          👍 <span class="like-count">0</span>
-        </button>
-        <p class="date">작성 날짜: 2023년 8월 10일</p>
-      </div>
-      <h2>게시물 제목 2</h2>
-        <p>게시물 글 미리보기 요약</p>
-        <hr />
-        <button class="like-button">
-          👍 <span class="like-count">0</span>
-        </button>
-        <p class="date">작성 날짜: 2023년 8월 10일</p>
-      </div><h2>게시물 제목 3</h2>
-      <p>게시물 글 미리보기 요약</p>
-      <hr />
-      <button class="like-button">
-        👍 <span class="like-count">0</span>
-      </button>
-      <p class="date">작성 날짜: 2023년 8월 10일</p>
-    </div><h2>게시물 제목 4</h2>
+<div class="content">
+  <div class="card">
+    <h2>게시물 제목 1</h2>
     <p>게시물 글 미리보기 요약</p>
-    <hr />
+    <hr/>
     <button class="like-button">
       👍 <span class="like-count">0</span>
     </button>
     <p class="date">작성 날짜: 2023년 8월 10일</p>
-    <h2>게시물 제목 5</h2>
-        <p>게시물 글 미리보기 요약</p>
-        <hr />
-        <button class="like-button">
-          👍 <span class="like-count">0</span>
-        </button>
-        <p class="date">작성 날짜: 2023년 8월 10일</p>
-      </div>
-      <h2>게시물 제목 6</h2>
-        <p>게시물 글 미리보기 요약</p>
-        <hr />
-        <button class="like-button">
-          👍 <span class="like-count">0</span>
-        </button>
-        <p class="date">작성 날짜: 2023년 8월 10일</p>
-      </div>
-      
   </div>
-    </div>
+  <h2>게시물 제목 2</h2>
+  <p>게시물 글 미리보기 요약</p>
+  <hr/>
+  <button class="like-button">
+    👍 <span class="like-count">0</span>
+  </button>
+  <p class="date">작성 날짜: 2023년 8월 10일</p>
+</div>
+<h2>게시물 제목 3</h2>
+<p>게시물 글 미리보기 요약</p>
+<hr/>
+<button class="like-button">
+  👍 <span class="like-count">0</span>
+</button>
+<p class="date">작성 날짜: 2023년 8월 10일</p>
+</div><h2>게시물 제목 4</h2>
+<p>게시물 글 미리보기 요약</p>
+<hr/>
+<button class="like-button">
+  👍 <span class="like-count">0</span>
+</button>
+<p class="date">작성 날짜: 2023년 8월 10일</p>
+<h2>게시물 제목 5</h2>
+<p>게시물 글 미리보기 요약</p>
+<hr/>
+<button class="like-button">
+  👍 <span class="like-count">0</span>
+</button>
+<p class="date">작성 날짜: 2023년 8월 10일</p>
+</div>
+<h2>게시물 제목 6</h2>
+<p>게시물 글 미리보기 요약</p>
+<hr/>
+<button class="like-button">
+  👍 <span class="like-count">0</span>
+</button>
+<p class="date">작성 날짜: 2023년 8월 10일</p>
+</div>
 
-    <!-- footer-->
-    <div id="footer">
-      <p>명지대학교 건의사항 페이지 | 2023</p>
-    </div>
+</div>
+</div>
 
-    <script th:src="@{/home.js}"></script>
-    <script th:src="@{/home.css}"></script>
-  </body>
+<!-- footer-->
+<div id="footer">
+  <p>명지대학교 건의사항 페이지 | 2023</p>
+</div>
+<script
+    th:src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"
+></script>
+<script th:src="@{/src/main/resources/static/js/home.js}"></script>
+</body>
 </html>
