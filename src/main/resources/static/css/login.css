@@ -57,7 +57,7 @@
 }
 
 .login_button:hover {
-  background: #95b7e0;
+  background: rgb(63, 63, 142);
   color: #fff;
   font-family: "Inter", sans-serif;
   cursor: pointer;
