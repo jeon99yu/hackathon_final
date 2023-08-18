@@ -16,7 +16,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 8px 12px;
-  background: #cadbf0;
+  background: white;
 }
 
 .navbar__logo {
@@ -26,13 +26,13 @@ body {
 
 .navbar a {
   text-decoration: none;
-  color: #002d65;
+  color: #4ca880;
   width: 130px;
   display: block;
   padding: 10px 6px;
   font-size: 20px;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: bolder;
   text-align: center;
 }
 
@@ -71,7 +71,7 @@ body {
   font-weight: bolder;
   font-size: 30px;
   font-family: "Noto Sans KR", sans-serif;
-  color: darkblue;
+  color: rgb(0, 129, 19);
   margin: 0;
 }
 
@@ -86,7 +86,7 @@ body {
 
 /* 버튼요소 */
 #writeButton {
-  background-color: darkblue;
+  background-color: #4ca880;
   color: rgb(255, 255, 255);
   padding: 10px 20px;
   border: solid 1px grey;

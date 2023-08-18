@@ -6,7 +6,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 8px 12px;
-  background: #cadbf0;
+  background: whitesmoke;
 }
 
 .navbar__logo {
@@ -16,7 +16,7 @@
 
 .navbar a {
   text-decoration: none;
-  color: #002d65;
+  color: #4ca880;
   width: 130px;
   display: block;
   padding: 10px 6px;
@@ -61,8 +61,8 @@
 
 #preview {
   text-align: center;
-  font-size: 60px;
-  color: #002d65;
+  font-size: 50px;
+  color: darkgreen;
   font-weight: bold;
 }
 
@@ -111,7 +111,7 @@
 #myTitle {
   font-family: "Noto Sans KR", sans-serif;
   font-weight: bold;
-  color: darkblue;
+  color: darkgreen;
   margin-left: 5px;
 }
 #imo img {
